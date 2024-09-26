@@ -1,23 +1,14 @@
 import logo from './logo.svg';
+import SearchBar from './components/SearchBar';
 import './App.css';
 
 function App() {
+  const items = ['Apple', 'Banana', 'Orange', 'Pineapple', 'Mango'];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Search Example</h1>
+      <SearchBar data={items} />
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.browse-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0; /* Ensure no centering happens */
+    align-self: flex-start; /* Explicitly align to the left */
+  }

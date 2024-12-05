@@ -1,16 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ClimbingToken from './components/ClimbingToken';
 import SearchBar from './components/SearchBar';
+import BrowseButton from './components/BrowseButton';
+import CityList from './components/CityList';
+import ClimbingTypeSelector from './components/ClimbingTypeSelector';
 import './App.css';
 
-function App() {
-  const items = ['Apple', 'Banana', 'Orange', 'Pineapple', 'Mango'];
+const App = () => {
+  const [showCityList, setShowCityList] = useState(false);
+  const [selectedClimbingTypes, setSelectedClimbingTypes] = useState([]);
+
+  const handleBrowseClick = () => {
+    setShowCityList(true);
+  };
 
   return (
-    <div className="App">
-      <h1>Search Example</h1>
-      <SearchBar data={items} />
+    <div className="app-container">
+      <ClimbingToken />
+      <SearchBar />
+      <ClimbingTypeSelector
+        selectedTypes={selectedClimbingTypes}
+        setSelectedTypes={setSelectedClimbingTypes}
+      />
+      <BrowseButton onClick={handleBrowseClick} />
+      {showCityList && <CityList />}
     </div>
   );
-}
+};
 
 export default App;
